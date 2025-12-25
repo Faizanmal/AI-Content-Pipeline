@@ -384,41 +384,6 @@ npm test
 4. Push to the branch
 5. Open a Pull Request
 
-## � Deployment
-
-### Azure Deployment
-
-This project is designed to be deployed on Azure using the following services:
-
-- **Backend (Laravel)**: Azure App Service
-- **Frontend (Next.js)**: Azure Static Web App
-- **Database**: Azure Database for MySQL
-- **Automation Service**: Azure Container Apps
-
-#### Prerequisites
-- Azure CLI installed (`az --version`)
-- Azure account with active subscription
-
-#### Deployment Steps
-1. Clone the repository
-2. Login to Azure: `az login`
-3. Create a resource group: `az group create --name -rg --location eastus`
-4. Deploy database: `az mysql flexible-server create --resource-group -rg --name -db --location eastus --admin-user adminuser --admin-password <secure-password> --sku-name Standard_B1ms --tier Burstable --storage-size 20 --version 8`
-5. Deploy backend App Service: `az appservice plan create --name -plan --resource-group -rg --sku B1 --location eastus`
-   `az webapp create --name -backend --resource-group -rg --plan -plan --runtime "PHP|8.2"`
-6. Deploy frontend Static Web App: `az staticwebapp create --name -frontend --resource-group -rg --location eastus --source ./frontend --branch main --app-location "/" --api-location "" --output-location "out" --login-with-github false`
-7. For automation, create a Container App: `az containerapp create --name -automation --resource-group -rg --environment -env --image mcr.microsoft.com/azuredocs/containerapps-helloworld:latest --target-port 80 --ingress external`
-8. Configure environment variables for each service via Azure Portal (App Settings for App Service, Environment Variables for Static Web App and Container App).
-
-#### Live Link
-After deployment, the frontend will be available at the Azure Static Web App URL, e.g., `https://-frontend.azurestaticapps.net`
-
-For automated IaC deployment using Azure Developer CLI (azd):
-- Install azd: `winget install Microsoft.AzureDeveloperCLI`
-- Run `azd up` from the project root (requires azure.yaml and infra/ folder)
-
-See `.azure/plan.copilotmd` for detailed deployment plan.
-
-## �📄 License
+## 📄 License
 
 MIT License - feel free to use this project for your own purposes.
