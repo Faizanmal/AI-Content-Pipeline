@@ -1,0 +1,1 @@
+{"version":3,"file":"ArticleCard.d.ts","sourceRoot":"","sources":["ArticleCard.tsx"],"names":[],"mappings":"AAEA,OAAO,EAAE,OAAO,EAAE,MAAM,eAAe,CAAC;AACxC,OAAO,mBAAmB,CAAC;AAE3B,UAAU,gBAAgB;IACxB,OAAO,EAAE,OAAO,CAAC;CAClB;AAED,QAAA,MAAM,WAAW,GAAI,aAAa,gBAAgB,4CAsDjD,CAAC;AAEF,eAAe,WAAW,CAAC"}
